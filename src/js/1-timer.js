@@ -16,10 +16,8 @@ let userSelectedDate = null;
 iziToast.settings({
   position: 'topRight',
   progressBar: false,
-  icon: '',
-  iconUrl: '../img/error-icon.svg',
   messageColor: '#FFFFFF',
-  backgroundColor: '#EE3941'
+  close: false
 })
 
 const options = {
@@ -31,7 +29,10 @@ const options = {
     const selectedDate = selectedDates[0];
     if (selectedDate < new Date()) {
       iziToast.error({
-        message: 'Please choose a date in the future'
+        message: 'Please choose a date in the future',
+        backgroundColor: '#EE3941',
+        icon: '',
+        iconUrl: '../img/error-icon.svg',
       });
       startButton.disabled = true;
     } else {
